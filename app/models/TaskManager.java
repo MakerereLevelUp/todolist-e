@@ -4,12 +4,9 @@ import models.Task;
 
 import java.util.ArrayList;
 
-/**
- * Created by k-packxs on 3/22/14.
- */
 public class TaskManager {
 
-   private ArrayList<Task> taskList = new ArrayList<>();
+   private ArrayList<Task> taskList = new ArrayList<Task>();
 
     public TaskManager(){
     }

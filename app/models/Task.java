@@ -27,4 +27,24 @@ public class Task {
         return duration;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task)) return false;
+
+        Task task = (Task) o;
+
+        if (duration != task.duration) return false;
+        if (!name.equals(task.name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (duration ^ (duration >>> 32));
+        result = 31 * result + name.hashCode();
+        return result;
+    }
+
 }

@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by k-packxs on 3/15/14.
- */
 public class TaskTest {
 
 
