@@ -47,4 +47,8 @@ public class Task {
         return result;
     }
 
+    public static ArrayList<Task> taskList(){
+        ArrayList<Task> list = new ArrayList<Task>();
+        return list;
+    }
 }

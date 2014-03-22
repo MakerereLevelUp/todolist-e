@@ -2,6 +2,8 @@ import models.Task;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -21,4 +23,8 @@ public class TaskModelTest {
         assertThat(task,  is(new Task("group practising TDD", 1)));
             }
     
+    Task task = new Task(1, "group practising TDD");
+        assertThat(task,  is(new Task(1, "group practising TDD")));
+    }
+
 }
