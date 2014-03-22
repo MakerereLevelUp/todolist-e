@@ -7,6 +7,8 @@ import play.mvc.*;
 
 import views.html.*;
 
+import java.util.List;
+
 public class Application extends Controller {
 
     public static Result index() {
@@ -15,10 +17,9 @@ public class Application extends Controller {
 
     public static Result tasks(){
 
-      TaskManager taskManager = new TaskManager();
+        TaskManager taskManager = new TaskManager();
         taskManager.add(new Task("checking app",2,  3));
         taskManager.add(new Task("rendering views", 3, 3));
-        return  ok(
-                views.html.index.render("not good"));
+        return  ok(tasks.render(taskManager.tasks));
     }
 }

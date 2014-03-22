@@ -1,0 +1,29 @@
+@(tasks: java.util.ArrayList[models.Task])
+
+@main("Welcome to Play") {
+
+<h1>@tasks.size() task(s)</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Task Name</th>
+        <th>Duration</th>
+    </tr>
+
+   @for(task <- tasks) {
+
+    <tr>
+        <td>
+        @task.getId()
+        </td>
+        <td>
+            @task.getName()
+        </td>
+        <td>
+            @task.getDuration()
+        </td>
+    </tr>
+    }
+</table>
+}
