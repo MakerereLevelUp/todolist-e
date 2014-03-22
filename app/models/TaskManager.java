@@ -1,14 +1,10 @@
 package models;
 
-<<<<<<< HEAD
 import models.Task;
-=======
->>>>>>> adding tasks to the list
 
 import java.util.ArrayList;
 
 public class TaskManager {
-<<<<<<< HEAD
 
    private ArrayList<Task> taskList = new ArrayList<Task>();
 
@@ -26,12 +22,10 @@ public class TaskManager {
 
 
 
-=======
     public ArrayList<Task> tasks = new ArrayList<Task>();
 
     public void add(Task task) {
 
         tasks.add(task);
     }
->>>>>>> adding tasks to the list
 }

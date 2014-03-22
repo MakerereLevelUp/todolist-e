@@ -1,5 +1,6 @@
 import org.junit.*;
 
+import play.libs.WS;
 import play.mvc.*;
 import play.test.*;
 import play.libs.F.*;
@@ -24,5 +25,18 @@ public class IntegrationTest {
             }
         });
     }
+
+    @Test
+    public void testIndexWithTasksTestServer() {
+        running(testServer(3355), new Runnable() {
+            @Override
+            public void run() {
+                assertThat(
+                        WS.url("http://localhost:3355/tasks").get().get().getStatus()
+                ).isEqualTo(OK);
+            }
+        });
+    }
+
 
 }

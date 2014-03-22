@@ -11,20 +11,15 @@ public class TaskModelTest {
 
     @Test
     public void itShouldHaveTheAttributesForTask(){
-        Task task = new Task(1,"Practising TDD");
-        assertThat(task.getId(), is(1L));
+        Task task = new Task("Practising TDD", 1,4);
+        assertThat(task.getId(), is(4));
         assertThat(task.getName(), is("Practising TDD"));
     }
 
 
     @Test
     public void itShouldBeUnique(){
-        Task task = new Task( "group practising TDD", 1);
-        assertThat(task,  is(new Task("group practising TDD", 1)));
-            }
-    
-    Task task = new Task(1, "group practising TDD");
-        assertThat(task,  is(new Task(1, "group practising TDD")));
-    }
-
+        Task task = new Task( "group practising TDD", 1, 3);
+            assertThat(task,  is(new Task("group practising TDD", 1, 3)));
+        }
 }

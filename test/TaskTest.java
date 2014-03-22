@@ -12,7 +12,7 @@ public class TaskTest {
 
     @Test
     public void shouldTestTaskHasNameAndDuration(){
-       Task task=new Task("Pray",3);
+       Task task=new Task("Pray",3, 5);
 
     assertThat(task.getName(),is("Pray"));
     assertThat(task.getDuration(),is(3));
@@ -22,7 +22,7 @@ public class TaskTest {
     @Test
     public void shouldTestAddOfTaskToList(){
     TaskManager taskManager = new TaskManager();
-    Task task = new Task("Pray",3);
+    Task task = new Task("Pray",3, 4);
     taskManager.addTask(task);
    ArrayList<Task> taskList= taskManager.getTaskList();
     assertThat(taskList.size(),is(1));

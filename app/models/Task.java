@@ -6,25 +6,24 @@ public class Task {
 
     private String name;
     private int duration;
+    private int id;
 
-    public Task( String name, int duration){
+    public Task( String name, int duration, int id){
         this.name=name;
         this.duration=duration;
+        this.id = id;
     }
 
     public String getName(){
-
-
-
-    return name;
-
-}
+        return name;
+    }
 
     public int getDuration(){
-
-
-
         return duration;
+    }
+
+    public int getId(){
+        return id;
     }
 
     @Override
@@ -35,6 +34,7 @@ public class Task {
         Task task = (Task) o;
 
         if (duration != task.duration) return false;
+        if (id != task.id) return false;
         if (!name.equals(task.name)) return false;
 
         return true;
@@ -42,8 +42,9 @@ public class Task {
 
     @Override
     public int hashCode() {
-        int result = (int) (duration ^ (duration >>> 32));
-        result = 31 * result + name.hashCode();
+        int result = name.hashCode();
+        result = 31 * result + duration;
+        result = 31 * result + id;
         return result;
     }
 
