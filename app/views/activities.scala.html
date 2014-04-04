@@ -2,30 +2,56 @@
 
 @import helper._
 
-@main("Todo list") {
+@main("Todo list - Team E") {
 
-<h1>@tasks.size() task(s)</h1>
+<div class="container">
 
-<ul>
+<h1>I have @tasks.size() task(s)</h1>
+
+
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Task Name</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
     @for(task <- tasks) {
-    <li>
-        @task.name
+    <tr>
+        <td>
+        @task.id
+        </td>
 
+        <td>
+            @task.name
+        </td>
+
+        <td>
         @form(routes.Application.deleteTask(task.id)) {
         <input type="submit" value="Delete">
         }
-    </li>
+        </td>
+    </tr>
     }
-</ul>
+    </tbody>
+  </table>
+
 
 <h2>Add a new task</h2>
 
-@form(routes.Application.newTask()) {
 
-@inputText(taskForm("name"))
+        @form(routes.Application.newTask()) {
 
-<input type="submit" value="Create">
+        @inputText(taskForm("name"))
 
-}
+        <input type="submit" class="btn btn-primary" value="Create">
+
+        }
+
+    </div>
 
 }
