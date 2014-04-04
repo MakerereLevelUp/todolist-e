@@ -21,7 +21,6 @@ public class TaskManager {
    }
 
 
-
     public ArrayList<Task> tasks = new ArrayList<Task>();
 
     public void add(Task task) {

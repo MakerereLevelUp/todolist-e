@@ -16,15 +16,19 @@ public class IntegrationTest {
      * add your integration test here
      * in this example we just check if the welcome page is being shown
      */
-    @Test
+
+
+   @Test
     public void test() {
         running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
             public void invoke(TestBrowser browser) {
-                browser.goTo("http://localhost:3333");
-                assertThat(browser.pageSource()).contains("Your new application is ready.");
+                browser.goTo("http://localhost:3333/");
+                assertThat(browser.pageSource()).contains("Your new application is ready");
             }
         });
     }
+
+
 
     @Test
     public void testIndexWithTasksTestServer() {
@@ -34,6 +38,16 @@ public class IntegrationTest {
                 assertThat(
                         WS.url("http://localhost:3355/tasks").get().get().getStatus()
                 ).isEqualTo(OK);
+            }
+        });
+    }
+
+    @Test
+    public void testInMemory() {
+        running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT, new Callback<TestBrowser>() {
+            public void invoke(TestBrowser browser) {
+                browser.goTo("http://localhost:3333");
+                assertThat(browser.pageSource()).contains("Your new application is ready.");
             }
         });
     }

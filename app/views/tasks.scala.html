@@ -1,6 +1,6 @@
-@(tasks: java.util.ArrayList[models.Task])
+@(tasks: java.util.ArrayList[models.Task], taskForm: Form[Task])
 
-@main("Welcome to Play") {
+@main("My Todo List") {
 
 <h1>@tasks.size() task(s)</h1>
 
@@ -8,22 +8,27 @@
     <tr>
         <th>ID</th>
         <th>Task Name</th>
-        <th>Duration</th>
+
     </tr>
 
    @for(task <- tasks) {
 
     <tr>
         <td>
-        @task.getId()
+        @task.id
         </td>
         <td>
-            @task.getName()
+            @task.name
         </td>
-        <td>
-            @task.getDuration()
-        </td>
+
     </tr>
     }
 </table>
+
+<h2>Add new Task</h2>
+
+
 }
+
+
+

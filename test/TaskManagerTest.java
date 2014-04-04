@@ -20,7 +20,7 @@ public class TaskManagerTest {
     @Test
     public void ItShouldAddTask(){
         TaskManager taskManager = new TaskManager();
-        taskManager.add(new Task("Testing storage", 3, 4));
+        taskManager.add(new Task("Testing storage",1));
         assertThat(taskManager.tasks.size(), is(1));
     }
 
