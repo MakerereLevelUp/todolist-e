@@ -24,16 +24,6 @@ public class Task extends Model {
         this.id = id;
     }
 
-    /*
-    public String getName(){
-        return name;
-    }
-
-    public int getId(){
-        return id;
-    }
-*/
-
     public static ArrayList<Task> taskList(){
         ArrayList<Task> list = new ArrayList<Task>();
         return list;
