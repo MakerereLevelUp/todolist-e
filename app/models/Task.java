@@ -15,11 +15,11 @@ public class Task extends Model {
     public String name;
 
     @Id
-    public int id;
+    public Long id;
 
     public static Finder<Long, Task> find = new Finder(Long.class, Task.class);
 
-    public Task( String name, int id){
+    public Task( String name, Long id){
         this.name=name;
         this.id = id;
     }
@@ -39,5 +39,9 @@ public class Task extends Model {
 
     public static void delete(Long id) {
         find.ref(id).delete();
+    }
+
+    public static Task getTaskById(Long id){
+        return find.ref(id);
     }
 }

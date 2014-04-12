@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table task (
-  id                        integer not null,
+  id                        bigint not null,
   name                      varchar(255),
   constraint pk_task primary key (id))
 ;
