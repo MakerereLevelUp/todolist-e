@@ -12,17 +12,17 @@ public class TaskTest {
 
     @Test
     public void shouldTestTaskHasNameAndId(){
-       Task task=new Task("Pray",1);
+       Task task=new Task("Pray",1L);
 
     assertThat(task.name,is("Pray"));
-    assertThat(task.id,is(1));
+    assertThat(task.id,is(1L));
 
     }
 
     @Test
     public void shouldTestAddOfTaskToList(){
     TaskManager taskManager = new TaskManager();
-    Task task = new Task("Pray",1);
+    Task task = new Task("Pray",1L);
     taskManager.addTask(task);
    ArrayList<Task> taskList= taskManager.getTaskList();
     assertThat(taskList.size(),is(1));

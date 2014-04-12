@@ -10,8 +10,7 @@ libraryDependencies ++= Seq(
 
 play.Project.playJavaSettings
 
-val appDependencies = Seq(
-
-  "mysql" % "mysql-conector-java" % "5.1.18"
-
-)
+//val appDependencies = Seq(
+//
+//  "mysql" % "mysql-conector-java" % "5.1.18"
+//)

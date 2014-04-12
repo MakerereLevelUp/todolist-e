@@ -14,7 +14,7 @@ public class TaskModelTest {
 
     @Test
     public void itShouldHaveTheAttributesForTask(){
-        Task task = new Task("Practising TDD",1);
+        Task task = new Task("Practising TDD",1L);
         assertThat(task.name, is("Practising TDD"));
     }
 
@@ -31,8 +31,8 @@ public class TaskModelTest {
         running(fakeApplication(),new Runnable() {
             @Override
             public void run() {
-                Task task1 = new Task("pray",1);
-                Task task2 = new Task("eat",2);
+                Task task1 = new Task("pray",1L);
+                Task task2 = new Task("eat",2L);
                 task1.save();
                 task2.save();
                 Integer size = Task.all().size();
